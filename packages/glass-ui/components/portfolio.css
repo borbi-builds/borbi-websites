@@ -1,0 +1,19 @@
+/* Portfolio component custom styles */
+
+/* Ensure smooth slider on all devices */
+.before-after-slider {
+  touch-action: pan-y;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Tabular numbers for counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth image rendering */
+.before-after-slider img {
+  -webkit-user-drag: none;
+  image-rendering: -webkit-optimize-contrast;
+}

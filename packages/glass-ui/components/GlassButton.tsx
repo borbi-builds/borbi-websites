@@ -8,6 +8,8 @@ interface GlassButtonProps {
   onClick?: () => void;
   href?: string;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export const GlassButton: React.FC<GlassButtonProps> = ({
@@ -17,6 +19,8 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
   onClick,
   href,
   className = '',
+  type = 'button',
+  disabled = false,
 }) => {
   const baseStyles = `
     inline-flex items-center justify-center
@@ -61,7 +65,7 @@ export const GlassButton: React.FC<GlassButtonProps> = ({
   }
 
   return (
-    <button onClick={onClick} className={combinedStyles}>
+    <button onClick={onClick} type={type} disabled={disabled} className={combinedStyles}>
       {children}
     </button>
   );

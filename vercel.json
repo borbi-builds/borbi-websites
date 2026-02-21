@@ -1,0 +1,49 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/borbi-enterprises/next.config.js",
+      "use": "@verceljs/node",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "apps/marketing-arm/next.config.js",
+      "use": "@verceljs/node",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "apps/websites-services/next.config.js",
+      "use": "@verceljs/node",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "apps/automation-sales/next.config.js",
+      "use": "@verceljs/node",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "apps/trained-agents/next.config.js",
+      "use": "@verceljs/node",
+      "config": { "zeroConfig": true }
+    },
+    {
+      "src": "apps/equity-research/next.config.js",
+      "use": "@verceljs/node",
+      "config": { "zeroConfig": true }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_BORBI_EMAIL": "hello@borbienterprises.com",
+    "N8N_WEBHOOK_URL": "http://localhost:5678/webhook/borbi-contact-form"
+  }
+}

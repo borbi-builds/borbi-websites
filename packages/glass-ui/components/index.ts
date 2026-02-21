@@ -8,3 +8,4 @@ export { FAQ } from './FAQ';
 export { CTA } from './CTA';
 export { Footer } from './Footer';
 export { Navbar } from './Navbar';
+export { ContactForm } from './ContactForm';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import {
   Hero,
@@ -6,6 +6,7 @@ import {
   GlassButton,
   CTA,
   Footer,
+  ContactForm,
 } from '@borbi/glass-ui';
 
 const TIERS = [
@@ -43,13 +44,6 @@ const CASE_STUDIES = [
 ];
 
 export default function MarketingArm() {
-  const [email, setEmail] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Connect to n8n webhook
-    alert('Free audit request submitted!');
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-900 to-black">
@@ -92,21 +86,12 @@ export default function MarketingArm() {
             We'll assess your website, SEO ranking, social media presence, and competition. Takes 15 minutes.
           </p>
           
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-400"
-                required
-              />
-            </div>
-            <GlassButton type="submit" variant="primary" size="lg" className="w-full">
-              Get Free Audit
-            </GlassButton>
-          </form>
+          <ContactForm 
+            source="marketing-arm"
+            hideCompany={false}
+            submitButtonText="Get Free Audit"
+            successMessage="Audit request received! We'll analyze your business and send recommendations within 24 hours."
+          />
         </motion.div>
       </section>
 

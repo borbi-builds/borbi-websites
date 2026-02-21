@@ -7,6 +7,8 @@ import {
   ServiceGrid,
   CTA,
   Footer,
+  PortfolioGrid,
+  allCaseStudies,
 } from '@borbi/glass-ui';
 
 const SERVICES = [
@@ -34,6 +36,9 @@ export default function Home() {
           <div className="flex gap-8 hidden md:flex">
             <a href="#services" className="text-slate-300 hover:text-white transition">
               Services
+            </a>
+            <a href="#portfolio" className="text-slate-300 hover:text-white transition">
+              Portfolio
             </a>
             <a href="#contact" className="text-slate-300 hover:text-white transition">
               Contact
@@ -94,6 +99,26 @@ export default function Home() {
             </GlassCard>
           ))}
         </ServiceGrid>
+      </section>
+
+      {/* Portfolio Section */}
+      <section id="portfolio" className="max-w-6xl mx-auto px-6 py-24">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Our Work
+          </h2>
+          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            Real results for real businesses. See how we've helped clients transform their operations.
+          </p>
+        </motion.div>
+
+        <PortfolioGrid caseStudies={allCaseStudies.slice(0, 4)} showFilter={false} />
       </section>
 
       {/* CTA Section */}
